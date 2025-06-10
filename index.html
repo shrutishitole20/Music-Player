@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Music Player</title>
+    <script src="https://kit.fontawesome.com/9e9330d728.js" crossorigin="anonymous"></script>
+
+    
+</head>
+
+<body>
+    <div class="disc">
+        <img id="disc" class="discImg" src="disc.png" alt="Disc Image"/>
+     </div>
+    <div class="player">
+        <div class="icontop">
+            <div class="icons control"><i class="fa-solid fa-chevron-left"></i></i></div>
+            <p>Music Player</p>
+            <div class="icons control"><i class="fa-solid fa-bars"></i></i></div>
+        </div>
+        <div class="poster">
+            <img src="still-rollin-Flyer.png" alt="" id="musicPoster" />
+        </div>
+
+        <div class="songs-detail">
+            <h2 id="songTitle">Still Rollin</h2>
+            <h3 id="songArtist">Shubh</h3>
+            <h4 id="songAlbum"></h4> <!-- Album info (optional) -->
+        </div>
+
+        <div class="progress">
+            <input type="range" value="0" name="" id="progress-bar">
+        </div>
+
+        <!-- Volume control -->
+        <div class="volume-control">
+            <i class="fa-solid fa-volume-high"></i>
+            <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
+        </div>
+
+        <div class="controls">
+            <div class="heart control"><i id="heart" class="fa-sharp fa-regular fa-heart"></i></div>
+            <div class="prev control"><i class="fa-solid fa-backward-step"></i></div>
+            <div id="playBox" class="play control" onclick="playPause()"><i id="play" class="fa-solid fa-play"></i>
+            </div>
+            <div class="next control"><i class="fa-solid fa-forward-step"></i></div>
+            <div class="repeat control"><i id="repeat" class="fa-solid fa-repeat"></i></div>
+        </div>
+
+        <audio src="Still Rollin.mp3" id="song"></audio>
+
+        <!-- Add playlist UI -->
+        <div class="playlist">
+            <ul id="playlist">
+                <!-- Songs will be populated here by JS -->
+            </ul>
+            <!-- Dynamic playlist controls -->
+            <div class="playlist-controls">
+                <input type="text" id="newSongTitle" placeholder="Song Title">
+                <input type="text" id="newSongArtist" placeholder="Artist">
+                <input type="text" id="newSongAlbum" placeholder="Album">
+                <input type="file" id="newSongAudio" accept="audio/*">
+                <input type="file" id="newSongImage" accept="image/*">
+                <button id="addSongBtn">Add Song</button>
+                <button id="removeSongBtn">Remove Selected Song</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="script.js"></script>
+ 
+
+</html>
